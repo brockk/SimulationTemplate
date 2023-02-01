@@ -1,0 +1,52 @@
+---
+title: "Job scripts for a simulation study"
+subtitle: "USERCHOICE - replace with your project name"
+author: "USERCHOICE - replace with your name"
+date: "22 November, 2021"
+output: 
+  html_document:
+    keep_md: true
+---
+
+
+
+These scripts are intended to be run in the following order:
+
+1. CreateDatasets.R
+2. FitModel.R
+3. LoadStackAndSave.R
+4. ZipAndDelete
+5. (if necessary) UnzipAndRestore.R
+
+Each can be run in RStudio's Jobs pane using commands like this from the `rstudioapi` package:
+
+
+```r
+rstudioapi::jobRunScript(
+  path = paste0(job_script_dir, "CreateDatasets.R"),
+  name = "CreateDatasets - Scenario 1a",
+  workingDir = paste0(simulation_root, "Scenario1a/")
+)
+```
+
+or on a PBS cluster using a job file like 
+
+```
+#PBS -l walltime=01:00:00
+#PBS -m aeb
+#PBS -M joe.bloggs@ucb.com
+cd Scenario1a/
+/opt/R/4.0.1/bin/Rscript ../JobScripts/CreateDatasets.R
+```
+
+or in batch mode on a Windows machine using commands like:
+
+```
+cd Scenario1a/
+"C:\Program Files\R\R-3.6.1\bin\Rscript" ..\JobScripts\CreateDatasets.R
+```
+
+Obviously, in each of the examples above, you should:
+
+* change the R version to match that of your target system;
+* change the scenario path as appropriate for your project. 

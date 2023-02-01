@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+Project.Rproj
+Data
+# USERCHOICE - exclude your model output directories
+Model
+*.Rds
+*.zip
+*.e[0-9]*
+*.o[0-9]*

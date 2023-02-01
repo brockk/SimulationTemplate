@@ -1,0 +1,8 @@
+# USERCHOICE - set time for data-generating job. 15 mins is usually OK
+#PBS -l walltime=00:15:00
+#PBS -m aeb
+# USERCHOICE set your email
+#PBS -M joe.bloggs@ucb.com
+# USERCHOICE navigate to the directory housing your scenario / DGM
+cd /mnt/home/uXXXXXX/MyProject/Scenario1a/
+/opt/R/4.0.1/bin/Rscript ../JobScripts/CreateDatasets.R
