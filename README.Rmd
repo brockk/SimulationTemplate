@@ -36,7 +36,7 @@ To use this project as the template in your simulation study, follow these steps
 
 1. Clone this repository and rename as required (e.g. MyProject) using:
 
-`git clone MyProject https://github.com/brockk/SimulationTemplate`
+`git clone https://github.com/brockk/SimulationTemplate MyProject`
 
 and then run the following steps:
 
